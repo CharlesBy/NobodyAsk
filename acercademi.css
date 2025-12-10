@@ -1,0 +1,234 @@
+/* --- ESTILOS GENERALES --- */
+universal-selector {
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Franklin Gothic Medium";
+    margin: 0;
+}
+
+h1 {
+    font-size: 3.5em;
+}
+h2 {
+    font-size: 2.5em;
+}
+h3 {
+    font-size: 2em;
+}
+p {
+    font-size: 1em;
+}
+ul {
+    list-style: none;
+}
+.container {
+    margin: auto;
+    max-width: 1200px;
+}
+/*---HEADER---*/
+header {
+    background-color: aliceblue;
+}
+
+header .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+header .logo {
+    color: black;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+    padding: 25px 30px;
+}
+
+/* Estilo del botón del dropdown */
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit; /* Hereda el color gris del navbar */
+  font-family: inherit;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Efecto Roll-over (Hover) para los enlaces y el botón del dropdown */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #ddd; /* Fondo gris claro al pasar el mouse */
+  color: black; /* Texto negro */
+}
+/* --- AQUÍ ESTÁ LA LÓGICA DEL MENÚ DESPLEGABLE --- */
+
+/* El contenido del menú (oculto por defecto) */
+.dropdown-content {
+  display: none; /* Esto lo oculta inicialmente */
+  position: absolute; /* Lo saca del flujo normal para que "flote" */
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Sombra elegante */
+  z-index: 2; /* Asegura que aparezca encima de otros elementos */
+}
+
+/* Estilos de los enlaces DENTRO del dropdown */
+.dropdown-content a {
+  float: none; /* Se apilan verticalmente */
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Efecto Roll-over para los enlaces internos */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* MOSTRAR EL MENÚ: La regla clave */
+.dropdown:hover .dropdown-content {
+  display: block; /* Al hacer hover en el contenedor, mostramos el contenido */
+}
+
+/*----CUERPO Y CONTENEDORES---*/
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+#acerca-de-mi .container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+    text-align: center;
+}
+
+/*imagen*/
+img {
+    border-radius: 30px;
+    box-shadow: 2px 2px 10px grey;
+}
+
+#acerca-de-mi .quien-soy {
+    background-color: lightblue;
+    border-radius: 30px;
+    color: firebrick;
+    margin: 5px;
+    text-align: center;
+}
+
+#acerca-de-mi .donde-he-estudiado {
+    background-color: lightcyan;
+    border-radius: 30px;
+    color: black;
+    margin: 5px;
+    text-align: center;
+}
+#acerca-de-mi .mis-gustos {
+    align-content: center;
+    background-color: darkcyan;
+    border-radius: 30px;
+    color: white;
+    margin: 5px;
+    text-align: center;
+}
+/*----VIDEO---*/
+video {
+    align-content: center;
+    border-radius: 30px;
+    box-shadow: 2px 2px 10px cyan;
+    display: inline-flex;
+    height: 170px;
+    margin: 3px;
+    width: 300px;
+}
+/*----MENU ENFOCADO A VISTA MOVIL---*/
+.menu{
+    background-color: aliceblue;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    position: fixed;
+    text-align: center;
+    z-index: 1;
+
+}
+li a{
+    color: black;
+     text-align: center;
+     text-decoration: none;
+}
+li a:hover {
+    color: darkcyan;
+}
+.menu li{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-decoration: none;
+}
+.menu li:hover ul{
+    display: block;
+}
+.menu ul{
+    display: none;
+    position: relative;
+}
+footer {
+    background-color: darkcyan;
+    color:aliceblue;
+    font-size: 1.5em;
+}
+/*----FOOTER---*/
+footer .p{
+    margin:0;
+}
+footer .container{
+    align-items: flex-end;
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+/*----ADAPTACIÓNES A DISPOSITIVOS---*/
+@media(min-width: 720px){
+    
+     header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-left: 100px;
+        
+    }
+   #acerca-de-mi .container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 60px;
+    text-align: center;
+} 
+ 
+.menu{
+     display: none;
+
+}     
+
+    
+}
+    
+    
+    
+    
+    

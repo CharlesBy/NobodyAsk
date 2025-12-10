@@ -1,0 +1,247 @@
+body {
+    font-family: "Franklin Gothic Medium";
+    margin: 0;
+}
+
+h1 {font-size: 3.5em;}
+h2 {font-size: 2.5em;}
+h3 {font-size: 2em;}
+p {font-size: 1em;}
+ul {list-style: none;}
+
+header {background-color: aliceblue;}
+
+
+header .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+header .logo {
+    color: black;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+    padding: 25px 30px;
+}
+/* Estilo del botón del dropdown */
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit; /* Hereda el color gris del navbar */
+  font-family: inherit;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Efecto Roll-over (Hover) para los enlaces y el botón del dropdown */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #ddd; /* Fondo gris claro al pasar el mouse */
+  color: black; /* Texto negro */
+}
+/* --- AQUÍ ESTÁ LA LÓGICA DEL MENÚ DESPLEGABLE --- */
+
+/* El contenido del menú (oculto por defecto) */
+.dropdown-content {
+  display: none; /* Esto lo oculta inicialmente */
+  position: absolute; /* Lo saca del flujo normal para que "flote" */
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Sombra elegante */
+  z-index: 2; /* Asegura que aparezca encima de otros elementos */
+}
+
+/* Estilos de los enlaces DENTRO del dropdown */
+.dropdown-content a {
+  float: none; /* Se apilan verticalmente */
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Efecto Roll-over para los enlaces internos */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* MOSTRAR EL MENÚ: La regla clave */
+.dropdown:hover .dropdown-content {
+  display: block; /* Al hacer hover en el contenedor, mostramos el contenido */
+}
+
+
+#proyectos .container {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 30px;
+    height: 500px;
+    align-items: center;
+    color: black;
+}
+
+/* --- CONTENEDOR PRINCIPAL DEL CARRUSEL --- */
+.slider {
+    width: 200px;
+    height: 200px; /* Altura del carrusel */
+    position: relative;
+    overflow: hidden; /* Oculta lo que se salga del contenedor */
+    background: darkcyan;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+}
+
+/* --- PISTA DESLIZANTE (TRACK) --- */
+.slide-track {
+    display: flex;
+    width: calc(250px * 18);  /* 250px (ancho img) * número total de slides (9 originales + 9 duplicados) */
+    animation: scroll 20s linear infinite;
+}
+
+/* Pausar animación al pasar el mouse por encima de la pista completa */
+.slide-track:hover {
+    animation-play-state: paused;
+}
+
+/* --- ANIMACIÓN (Derecha a Izquierda) --- */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-200px * 9));
+    } /* Mueve la mitad del ancho total */
+}
+
+/* --- ESTILOS DE LAS IMÁGENES (SLIDES) --- */
+.slide {
+    height: 200px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box; /* Para que el padding no afecte el ancho total */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformarse */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slide:hover {
+    transform: scale(1.05); /* Pequeño zoom al pasar el mouse */
+}
+
+/* --- LIGHTBOX (MODAL PARA VER EN GRANDE) --- */
+.lightbox {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 80%;
+    height: 80%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);/* Fondo oscuro */
+}
+
+/* Imagen dentro del modal */
+.lightbox-content {
+    margin: auto;
+    display: flex;
+    max-width: 90%;
+    max-height: 100vh;
+    border-radius: 5px;
+    animation: zoomIn 0.3s;
+}
+
+/* Botón de cerrar */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*----FOOTER----*/
+footer {
+    background-color: darkcyan;
+    color: aliceblue;
+    font-size: 1.5em;
+}
+footer .p {
+    margin: 0;
+}
+footer .container {
+    align-items: flex-end;
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    padding: 20px;
+}
+
+@media (min-width: 720px) {
+   header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-left: 100px;
+        
+    }
+
+    #proyectos .container {
+        position: relative;
+        text-align: center;
+        border-radius: 30px;
+        height: 500px;
+        align-items: center;
+        padding: 20px 60px;
+    }
+     .slider {
+                height: 250px;
+                 width: 100%;
+            }
+            .slide {
+                height: 250px;
+                width: 250px;
+            }
+        
+            .slide-track {
+                width: calc(250px * 18); 
+            }
+            @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-250px * 9)); }
+            }
+
+    footer .conteiner {
+        justify-content: flex-end;
+    }
+}

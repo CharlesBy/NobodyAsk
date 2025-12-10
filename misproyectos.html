@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" /> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edege">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+        <link rel="stylesheet" type="text/css" href="misproyectos.css" >
+        <link rel="icon" href="Favicon/favicon.ico" type="image/x-icon">
+        
+        <title>Mis Proyectos</title>
+        <style> 
+            body{
+            background-color: rgba(35, 155, 181, 0.5);
+            }
+        </style>
+    </head>
+    <body>
+       <header>      
+    <div id="container">
+            <p class="logo">NobodyAsk</p>       
+    <nav class="navbar"> 
+  <div class="dropdown">
+    <button class="dropbtn">Inicio 
+      <i class="arrow down"></i> </button>
+    <div class="dropdown-content">
+      <a href="acercademi.html">Conoceme</a>
+      <a href="misproyectos.html">Mis proyectos</a>
+      <a href="contactame.html">Contactame</a>
+    </div>
+  </div> 
+</nav>
+
+            </div>
+        </header>
+ <section id="proyectos"> 
+ <div class="container">   
+<h1>Proyectos</h1>
+<p>A continuación se muestra un recopilado de diversos trabajos realizados
+    a lo largo de la licenciatura en Diseño de la Comunicación Gráfica</p>
+
+    
+     <div class="slider">
+        <div class="slide-track">
+            <div class="slide"><img src="img/Album1.jpg" alt="Img 1" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/Album2.jpg" alt="Img 2" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/Album3.jpg" alt="Img 3" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/Album4.jpg" alt="Img 4" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/Album5.jpg" alt="Img 5" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/Alcatraz.jpg" alt="Img 6" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/Monociclo.jpg" alt="Img 7" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/ExpoCYADCartel.jpg" alt="Img 8" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/CartelHarvart1vista.jpg" alt="Img 9" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/yo.png" alt="Img 10" onclick="openLightbox(this)"></div>
+           
+           
+           
+           
+           
+            <div class="slide"><img src="img/Album1.jpg" alt="Img 1" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/Album2.jpg" alt="Img 2" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/Album3.jpg" alt="Img 3" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/Album4.jpg" alt="Img 4" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/Album5.jpg" alt="Img 5" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/Alcatraz.jpg" alt="Img 6" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/Monociclo.jpg" alt="Img 7" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/ExpoCYADCartel.jpg" alt="Img 8" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/CartelHarvart1vista.jpg" alt="Img 9" onclick="openLightbox(this)"></div>
+            <div class="slide"><img src="img/yo.png" alt="Img 10" onclick="openLightbox(this)"></div>
+        
+         
+          
+           
+      </div>
+    </div>
+         
+          <div id="myLightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="img01">
+    </div>
+
+   <script>
+        // Obtener elementos
+        var modal = document.getElementById("myLightbox");
+        var modalImg = document.getElementById("img01");
+        var track = document.querySelector(".slide-track");
+
+        // Función para abrir el modal
+        function openLightbox(element) {
+            modal.style.display = "block";
+            modalImg.src = element.src; // Pone la misma imagen que clickeaste
+            
+            // Pausar animación del carrusel forzosamente
+            track.style.animationPlayState = 'paused';
+        }
+
+        // Función para cerrar el modal
+        function closeLightbox() {
+            modal.style.display = "none";
+            
+            // Reanudar animación
+            track.style.animationPlayState = 'running';
+        }
+
+        // Cerrar si se hace click fuera de la imagen
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                closeLightbox();
+            }
+        }
+     </script>
+            
+            
+            
+            
+    
+        
+        
+        </div>  
+    </section>     
+        
+       <footer>
+          <div class="container">
+             <p>&copy; NobodyAsk 2025</p> 
+              
+          </div>
+      </footer>  
+        
+        
+        
+        
+        
+        
+    </body>
+</html>
