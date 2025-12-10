@@ -128,25 +128,25 @@ audio {
 
     }
 .formulario{
-    margin: 10px;
+    margin: 0px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     text-align: center;
     height: 500px;
-    width: 400px;
+    width: 360px;
     border-radius: 20px;
     background-color: darkred;
 }
 
 .ubicacion{
-    margin: 10px;
+    margin: 0px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     text-align: center;
     height: 500px;
-    width: 400px;
+    width: 3600px;
     border-radius: 20px;
     background-color: cadetblue;
 }
@@ -212,4 +212,5 @@ footer .container {
     }
 
 }
+
 
